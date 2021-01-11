@@ -2,9 +2,10 @@ import logo from './google-logo.svg';
 import './App.css';
 import React from "react";
 import ReactDOM from "react-dom";
+import SimpleAccordion from "./Accordion/Accordion"
 //import { Box } from '@material-ui/core';
 
-const people = [
+const websites = [
   "Siri",
   "Alexa",
   "Google",
@@ -21,14 +22,14 @@ function App() {
   };
 
   const results = !searchTerm
-    ? people
-    : people.filter(person =>
-        person.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+    ? websites
+    : websites.filter(website =>
+        website.toLowerCase().includes(searchTerm.toLocaleLowerCase())
       );
 
   return (
     <div className="App">
-      <logo/>
+      <img alt="google logo" src={logo}/>
       <input
         type="text"
         placeholder="Search"
@@ -40,6 +41,8 @@ function App() {
           <li>{item}</li>
         ))}
       </ul>
+      <SimpleAccordion/>
+
     </div>
   );
 }
