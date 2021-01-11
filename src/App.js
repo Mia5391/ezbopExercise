@@ -3,7 +3,10 @@ import './App.css';
 import React from "react";
 import ReactDOM from "react-dom";
 import SimpleAccordion from "./Accordion/Accordion"
-//import { Box } from '@material-ui/core';
+import ImageAvatars from "./Avatar/Avatar"
+import { Avatar, Box } from '@material-ui/core';
+
+
 
 const websites = [
   "Siri",
@@ -29,20 +32,27 @@ function App() {
 
   return (
     <div className="App">
+      <Box id="search-header">
       <img alt="google logo" src={logo}/>
+
       <input
         type="text"
         placeholder="Search"
         value={searchTerm}
         onChange={handleChange}
       />
+      <Avatar/>
+      </Box>
+      <Box id="search-results">
       <ul>
         {results.map(item => (
           <li>{item}</li>
         ))}
+              <SimpleAccordion/>
       </ul>
-      <SimpleAccordion/>
 
+      </Box>
+      
     </div>
   );
 }
