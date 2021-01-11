@@ -4,8 +4,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import SimpleAccordion from "./Accordion/Accordion"
 import ImageAvatars from "./Avatar/Avatar"
-import { Avatar, Box } from '@material-ui/core';
-
+import { Box } from '@material-ui/core';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import AppsIcon from '@material-ui/icons/Apps';
 
 
 const websites = [
@@ -41,7 +42,9 @@ function App() {
         value={searchTerm}
         onChange={handleChange}
       />
-      <Avatar/>
+      <AppsIcon/>
+      <NotificationsIcon/>
+      <ImageAvatars/>
       </Box>
       <Box id="search-results">
       <ul>
